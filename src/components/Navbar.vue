@@ -1,5 +1,11 @@
 <template>
   <div class="navbar">
+    <span class="logo">
+      <label class>RentCar</label>
+      <i>
+        <fa icon="car-side" />
+      </i>
+    </span>
     <nav>
       <nav-item>
         <router-link to="/">Home</router-link>
@@ -25,11 +31,27 @@ export default {
     background-color: #42b983;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
+  }
+
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .navbar .logo label {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .navbar .logo i {
+    font-size: 32px; 
+    color: #fff;
   }
 
   .navbar nav {
-    padding: 30px;
+    padding: 20px;
   }
   
   .navbar nav a {
@@ -38,6 +60,10 @@ export default {
   }
   
   .navbar nav a.router-link-exact-active {
+    color: #2c3e50;
+  }
+
+  .navbar nav a:hover {
     color: #2c3e50;
   }
 
