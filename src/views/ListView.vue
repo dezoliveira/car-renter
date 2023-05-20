@@ -1,0 +1,18 @@
+<template>
+  <div class="list">
+    <h1>This is an list page</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ListView',
+  components: {
+
+  }
+}
+</script>
+
+<style>
+
+</style>
