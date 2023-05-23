@@ -11,10 +11,10 @@
         <router-link to="/">Home</router-link>
       </nav-item>
       <nav-item>
-        <router-link to="/about">About</router-link>
+        <router-link to="/list">List</router-link>
       </nav-item>
       <nav-item>
-        <router-link to="/view">View</router-link>
+        <router-link to="/about">About</router-link>
       </nav-item>
     </nav>
   </div>
