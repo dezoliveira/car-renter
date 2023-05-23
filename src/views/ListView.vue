@@ -2,7 +2,7 @@
   <div class="list">
     <h1>Car List</h1>
     <div class="card" v-for="car in cars" :key="car.codigo">
-      <h1>{{ car.codigo }}</h1>
+      <h2>{{ car.codigo }}</h2>
       <p>{{ car.descricao }}</p>
       <p>{{ formataPlaca(car.placa) }}</p>
     </div>
@@ -34,13 +34,19 @@ export default {
 
   methods: {
     formataPlaca(placa){
-      return placa
+      let first = placa.substring(0, 3)
+      let last = placa.substring(3)
+      return `${first} - ${last}`
     }
   }
 }
 </script>
 
 <style>
+  .list h1 {
+    padding: 45px 0;
+  }
+  
   .card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

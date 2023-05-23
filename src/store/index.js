@@ -16,8 +16,8 @@ export default createStore({
     }
   },
   actions: {
-    fetchCars( { commit } ) {
-      fetch('http://localhost:3001/api/carros', {
+    async fetchCars( { commit } ) {
+      await fetch('http://localhost:3001/api/carros', {
       headers: {
         method: 'GET',
         'Content-Type': 'application/json',
