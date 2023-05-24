@@ -5,6 +5,8 @@
       <h2>{{ car.codigo }}</h2>
       <p>{{ car.descricao }}</p>
       <p>{{ formataPlaca(car.placa) }}</p>
+      <p>{{ car.cor }}</p>
+      <p>{{ car.ano }}</p>
     </div>
   </div>
 </template>
@@ -34,8 +36,13 @@ export default {
 
   methods: {
     formataPlaca(placa){
-      let first = placa.substring(0, 3)
-      let last = placa.substring(3)
+      let first = ''
+      let last = ''
+      if(placa) {
+        first = placa.substring(0, 3)
+        last = placa.substring(3)
+      }
+
       return `${first} - ${last}`
     }
   }
@@ -49,6 +56,6 @@ export default {
   
   .card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 </style>
