@@ -2,21 +2,18 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    cars: ['reer', 'asajsh']
+    cars: []
   },
   getters: {
-    getCars(data){
-      return this.cars = data
-    }
+
   },
   mutations: {
-    fetchCars(state, cars) {
-      console.log(cars)
+    loadCars(state, cars) {
       state.cars = cars
     }
   },
   actions: {
-    async fetchCars( { commit } ) {
+    async loadCars( { commit } ) {
       await fetch('http://localhost:3001/api/carros', {
       headers: {
         method: 'GET',
@@ -25,10 +22,9 @@ export default createStore({
     })
     .then((result) => result.json())
     //.then((data) => commit('fetchCars', data.result))
-    .then((data) => commit('fetchCars', data.result))
+    .then((data) => commit('loadCars', data.result))
     .catch((error) => error.json)
     }
   },
-  modules: {
-  }
+  modules: {}
 })

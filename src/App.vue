@@ -10,6 +10,10 @@
   name: "App",
   components: {
     Navbar
+  },
+
+  created() {
+    this.$store.dispatch('loadCars')
   }
 }
 </script>
