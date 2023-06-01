@@ -21,7 +21,6 @@ export default createStore({
       }
     })
     .then((result) => result.json())
-    //.then((data) => commit('fetchCars', data.result))
     .then((data) => commit('loadCars', data.result))
     .catch((error) => error.json)
     }

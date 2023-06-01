@@ -2,43 +2,24 @@
   <div class="list">
     <h1>Car List</h1>
     
-    <!-- <div class="header">
-      <h2>Codigo</h2>
-      <h2>Descrição</h2>
-      <h2>Placa</h2>
-      <h2>Cor</h2>
-      <h2>Ano</h2>
+    <div class="container">
+      <div class="header">
+        <h2>Codigo</h2>
+        <h2>Media</h2>
+        <h2>Descrição</h2>
+        <h2>Placa</h2>
+        <h2>Cor</h2>
+        <h2>Ano</h2>
+      </div>
+      <div class="card" v-for="car in cars" :key="car.codigo">
+        <h3>{{ car.codigo }}</h3>
+        <p><img :src="`./images/${ car.descricao }.jpg`" /></p>
+        <p>{{ car.descricao }}</p>
+        <p>{{ formataPlaca(car.placa) }}</p>
+        <p>{{ car.cor }}</p>
+        <p>{{ car.ano }}</p>
+      </div>
     </div>
-    <div class="card" v-for="car in cars" :key="car.codigo">
-      <h3>{{ car.codigo }}</h3>
-      <p>{{ car.descricao }}</p>
-      <p>{{ formataPlaca(car.placa) }}</p>
-      <p>{{ car.cor }}</p>
-      <p>{{ car.ano }}</p>
-    </div> -->
-    <table class="table">
-      
-      <thead>
-        <th>Codigo</th>
-        <th>Descrição</th>
-        <th>Placa</th>
-        <th>Cor</th>
-        <th>Ano</th>
-        <th>Reserva</th>
-      </thead>
-
-      <tbody>
-        <tr v-for="car in cars" :key="car.codigo">
-          <td><h3>{{ car.codigo }}</h3></td>
-          <td><p>{{ car.descricao }}</p></td>
-          <td><p>{{ formataPlaca(car.placa) }}</p></td>
-          <td><p>{{ car.cor }}</p></td>
-          <td><p>{{ car.ano }}</p></td>
-          <td><p><button>Alugar</button></p></td>
-        </tr>
-      </tbody>
-
-    </table>
   </div>
 </template>
 
@@ -50,9 +31,7 @@ export default {
   },
 
   data() {
-    return {
 
-    }
   },
 
   computed: {
@@ -71,32 +50,44 @@ export default {
       }
 
       return `${first} - ${last}`
-    }
+    },
   }
 }
 </script>
 
 <style>
-  .list {
+  .list h1{
+    padding: 50px;
+  }
+
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
-  .list h1 {
-    padding: 45px 0;
-  }
-
-  .table {
+  .header, .card { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
     width: 80%;
   }
-  
-  .table td, .table th {
-    border: 1px solid black;
+
+  .card {
+    transition: 0.5s all ease;
   }
 
-  .table th {
+  .card:hover {
     background-color: #42b983;
     color: #fff;
   }
+
+  .card img {
+    max-width: 128px;
+    min-height: 100px;
+    padding: 15px;
+    border-radius: 20%;
+  }
+
 </style>
