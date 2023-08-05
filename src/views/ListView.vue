@@ -74,6 +74,10 @@ export default {
     width: 80%;
   }
 
+  .header {
+    border-bottom: 2px solid #42b983;
+  }
+
   .card {
     transition: 0.5s all ease;
   }
