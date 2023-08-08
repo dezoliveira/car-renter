@@ -14,7 +14,8 @@ export default createStore({
   },
   actions: {
     async loadCars( { commit } ) {
-      await fetch('52.67.246.99:3001/api/carros', {
+      // await fetch(`${process.env.ROOT_API}/carros`, {
+      await fetch(`http://52.67.246.99:3001/api/carros`, {
       headers: {
         method: 'GET',
         'Content-Type': 'application/json',
